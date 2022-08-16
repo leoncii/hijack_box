@@ -1,4 +1,4 @@
-import styles from './navbar.module.css'
+import { Link } from "wouter";
 
 export function Navbar() {
     return <nav
@@ -7,17 +7,36 @@ export function Navbar() {
         aria-label="main navigation"
     >
         <div className="navbar-brand ">
-            <a class="navbar-item">
-                <img
-                    src="https://bulma.io/images/bulma-logo.png"
-                    width="112"
-                    height="28"
-                    alt="Bulma" />
+            <Link href='/'>
+                <a className="navbar-item link">
+                    <img
+                        src="https://bulma.io/images/bulma-logo.png"
+                        width="112"
+                        height="28"
+                        alt="Bulma"
+                    />
+                </a>
+            </Link>
+            <a
+                role="button"
+                className="navbar-burger navbar-item"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navbarBasicExample"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
-            <a role="button" className="navbar-burger navbar-item" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+        </div>
+
+        <div id="navbarBasicExample" className="navbar-menu">
+            <Link href="/">
+                <a className="link navbar-item">Home</a>
+            </Link>
+
+            <a className="navbar-item">
+                Maquinas
             </a>
         </div>
     </nav >
