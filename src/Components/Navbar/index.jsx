@@ -1,12 +1,23 @@
-import { Link } from "wouter";
+import { useRef } from "react"
+import { Link } from "wouter"
+import { burger, items, anchor } from './navbar.module.css'
 
 export function Navbar() {
+    const refBurger = useRef()
+
+    function handleClick() {
+        const target = refBurger.current.dataset.target
+        const $target = document.getElementById(target)
+        refBurger.current.classList.toggle('is-active')
+        $target.classList.toggle('is-active')
+    }
+
     return <nav
-        className="navbar is-black"
+        className="navbar is-black container is-fullhd is-fluid"
         role="navigation"
         aria-label="main navigation"
     >
-        <div className="navbar-brand ">
+        <div className="navbar-brand">
             <Link href='/'>
                 <a className="navbar-item link">
                     <img
@@ -18,8 +29,10 @@ export function Navbar() {
                 </a>
             </Link>
             <a
+                onClick={handleClick}
+                ref={refBurger}
                 role="button"
-                className="navbar-burger navbar-item"
+                className={`navbar-burger navbar-item ${burger}`}
                 aria-label="menu"
                 aria-expanded="false"
                 data-target="navbarBasicExample"
@@ -30,12 +43,15 @@ export function Navbar() {
             </a>
         </div>
 
-        <div id="navbarBasicExample" className="navbar-menu">
+        <div id="navbarBasicExample" className={`navbar-menu ${items}`}>
             <Link href="/">
-                <a className="link navbar-item">Home</a>
+                <a className={`link navbar-item ${anchor}`}>Home</a>
+            </Link>
+            <Link href="/agua/Agua">
+                <a className={`link navbar-item ${anchor}`}>Agua</a>
             </Link>
 
-            <a className="navbar-item">
+            <a className={`navbar-item ${anchor}`}>
                 Maquinas
             </a>
         </div>
