@@ -5,7 +5,6 @@ import { infoImg } from '../walkthrough.module.css'
 
 export default function Late() {
   return <>
-
     <ContentBlock>
       <h1>Escaneo de puertos</h1>
       <Paragraph> Primeramente hacemos nuestro escaneo de puertos y verificamos cuales estan abiertos</Paragraph>

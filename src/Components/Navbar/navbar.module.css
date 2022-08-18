@@ -1,8 +1,11 @@
 
 .anchor {
-  color: #D9D1CC;
+  color: #5a473c;
 }
-
+.profile {
+  width: 100%;
+  margin: 0 auto;
+}
 @media only screen and (min-width: 1024px) {
   .burger {
     display: none;

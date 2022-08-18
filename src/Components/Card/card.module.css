@@ -1,0 +1,18 @@
+.card {
+  height: fit-content;
+}
+
+.card:hover {
+  text-decoration: none;
+}
+
+.figure {
+  width: 168px;
+}
+
+.image {
+  border-radius: 7px;
+}
+.media {
+  margin-bottom: 0px;
+}

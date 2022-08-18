@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { Link } from "wouter"
-import { burger, items, anchor } from './navbar.module.css'
+import { burger, items, anchor, profile } from './navbar.module.css'
+import { Profile } from '../Profile'
 
 export function Navbar() {
     const refBurger = useRef()
@@ -13,7 +14,7 @@ export function Navbar() {
     }
 
     return <nav
-        className="navbar is-black container is-fullhd is-fluid"
+        className="navbar is-black container is-fullhd"
         role="navigation"
         aria-label="main navigation"
     >
@@ -50,10 +51,9 @@ export function Navbar() {
             <Link href="/agua/Agua">
                 <a className={`link navbar-item ${anchor}`}>Agua</a>
             </Link>
-
-            <a className={`navbar-item ${anchor}`}>
-                Maquinas
-            </a>
+            <div className='navbar-item'>
+                <Profile />
+            </div>
         </div>
     </nav >
 }
